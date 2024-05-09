@@ -1,0 +1,24 @@
+bool search(dict(string, string) x, string name) {
+    if(in(x, name)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+
+
+
+}
+
+void main() {
+    dict(string, string) book = new dict();
+
+    book["Alice"] = "12345";
+    book["Bob"] = "9897654";
+    book["Charlie"] = "55555";
+
+    print(search(book, "Alice"));
+    print(search(book, "Bob"));
+    print(search(book, "Charlie"));
+    print(search(book, "George"));
+}

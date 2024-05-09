@@ -1,0 +1,36 @@
+int roman_to_int(string roman) {
+    dict(string, int) roman_vals = new dict();
+
+    roman_vals["I"] = 1;
+    roman_vals["V"] = 5;
+    roman_vals["X"] = 10;
+    roman_vals["L"] = 50;
+    roman_vals["C"] = 100;
+    roman_vals["D"] = 500;
+    roman_vals["M"] = 1000;
+
+    int num = 0;
+    int prev_num = 0;
+    int val = 0;
+    for(int i = length(roman) - 1; i >= 0; i = i - 1) {
+        val = roman_vals[get(i, roman)];
+
+        if(val < prev_num) {
+            num = num - val;
+        }
+        else {
+            num = num + val;
+        }
+        prev_num = val;
+    }
+    return num;
+}
+
+void main() {
+    print("MCMLXXIV = ");
+    print(roman_to_int("MCMLXXIV"));
+    print("\n");
+    print("MMXXI = ");
+    print(roman_to_int("MMXXI"));
+    print("\n");
+}

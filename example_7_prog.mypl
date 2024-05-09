@@ -1,0 +1,51 @@
+void main() {
+    array int num_array = new int[26];
+    num_array[0] = 5;
+    num_array[1] = 50;
+    num_array[2] = 4;
+    num_array[3] = 23;
+    num_array[4] = 25;
+    num_array[5] = 50;
+    num_array[6] = 35;
+    num_array[7] = 40;
+    num_array[8] = 45;
+    num_array[9] = 50;
+    num_array[10] = 55;
+    num_array[11] = 60;
+    num_array[12] = 65;
+    num_array[13] = 70;
+    num_array[14] = 75;
+    num_array[15] = 50;
+    num_array[16] = 85;
+    num_array[17] = 50;
+    num_array[18] = 95;
+    num_array[19] = 100;
+    num_array[20] = 105;
+    num_array[21] = 110;
+    num_array[22] = 115;
+    num_array[23] = 120;
+    num_array[24] = 125;
+    num_array[25] = 130;
+
+
+    dict(int, int) counts = new dict();
+
+    for(int i = 0; i < length(num_array); i = i + 1){
+        if(in(counts, num_array[i])) {
+            counts[num_array[i]] = counts[num_array[i]] + 1;
+        }
+        else {
+            counts[num_array[i]] = 1;
+        }
+    }
+
+    array int kys = keys(counts);
+
+    for(int i = 0; i < length(kys); i = i + 1) {
+        print(kys[i]);
+        print(" = counted ");
+        print(counts[kys[i]]);
+        print(" times, ");
+        print("\n");
+    }
+}

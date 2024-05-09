@@ -1,0 +1,34 @@
+void main() {
+    dict(int, string) employee_ids = new dict();
+
+    employee_ids[1001] = "George C.";
+    employee_ids[1002] = "George F.";
+    employee_ids[1003] = "John D.";
+    employee_ids[1004] = "David R.";
+
+
+    dict(int, int) hours = new dict();
+
+    hours[1001] = 5;
+
+    hours[1002] = 4;
+
+    hours[1003] = 43;
+
+    hours[1004] = 2;
+
+    dict(string, int) name_paid = new dict();
+
+    array int ids = keys(employee_ids);
+
+    for(int i = 0; i < length(ids); i = i + 1) {
+        print("employee = ");
+        print(ids[i]);
+        print(", name = ");
+        print(employee_ids[ids[i]]);
+        int pay = 23 * hours[ids[i]];
+        print(", pay = $");
+        print(pay);
+        print("\n");
+    }
+}

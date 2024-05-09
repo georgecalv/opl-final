@@ -1,0 +1,25 @@
+dict(string, int) count_letters(string str) {
+    dict(string, int) count = new dict();
+    
+    string char = "h";
+
+    for(int i = 0; i < length(str); i = i + 1) {
+        char = get(i, str);
+        if(in(count, char)) {
+            count[char] = count[char] + 1;
+        }
+        else {
+            count[char] =  1;
+        }
+    } 
+
+    return count;
+}
+
+void main() {
+    string text = "Hello World";
+
+    dict(string, int) count = count_letters(text);
+
+    print(count["l"]);
+}

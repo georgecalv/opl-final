@@ -1,0 +1,27 @@
+void main() {
+    string user_input = "";
+    dict(string, int) frequency = new dict();
+
+    while (user_input != "quit") {
+        print("Please enter a word: ");
+        print(" ");
+        user_input = input();
+        
+        if (not in(frequency, user_input)) {
+            frequency[user_input] = 1;
+        }
+        else {
+            frequency[user_input] = frequency[user_input] + 1;
+        }
+    }
+
+    array string k = keys(frequency);
+
+    for(int i = 0; i < length(k); i = i + 1) {
+        print(k[i]);
+        print(" = ");
+        print(frequency[k[i]]);
+        print(" ");
+    }
+
+}

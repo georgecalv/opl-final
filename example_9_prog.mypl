@@ -1,0 +1,35 @@
+bool check_email(string s) {
+    int check = 0;
+    for(int i = 0; i < length(s); i = i + 1){
+        if((get(i, s) == "@") or (get(i, s) == ".")) {
+            check = check + 1;
+        }
+    }
+
+    if(check == 2) {
+        return true;
+    }
+    return false;
+}
+void main() {
+
+    dict(string, bool) valid_emails = new dict();
+
+    valid_emails["hello"] = check_email("hello");
+
+    valid_emails["man@gmail.com"] = check_email("man@gmail.com");
+
+    valid_emails["woman@outlook.com"] = check_email("woman@outlook.com");
+
+    valid_emails["woman@outlook"] = check_email("woman@outlook");
+
+    array string kys = keys(valid_emails);
+
+    for(int i = 0; i < length(kys); i = i + 1) {
+        print(kys[i]);
+        print(" = ");
+        print(valid_emails[kys[i]]);
+        print("\n");
+    }
+
+}

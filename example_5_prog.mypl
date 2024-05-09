@@ -1,0 +1,61 @@
+void main() {
+    dict(int, string) hash = new dict();
+
+    string text = "hello";
+
+    hash = simple_hash(text);
+
+    array int result = keys(hash);
+
+    int index = result[0];
+    print("key = ");
+    print(result[0]);
+    print("\n");
+    print("string = ");
+    print(hash[index]);
+
+
+}
+
+dict(int, string) simple_hash(string str) {
+    dict(string, int) alpha_dict = new dict();
+    alpha_dict["a"] = 65;
+    alpha_dict["b"] = 66;
+    alpha_dict["c"] = 67;
+    alpha_dict["d"] = 68;
+    alpha_dict["e"] = 69;
+    alpha_dict["f"] = 70;
+    alpha_dict["g"] = 71;
+    alpha_dict["h"] = 72;
+    alpha_dict["i"] = 73;
+    alpha_dict["j"] = 74;
+    alpha_dict["k"] = 75;
+    alpha_dict["l"] = 76;
+    alpha_dict["m"] = 77;
+    alpha_dict["n"] = 78;
+    alpha_dict["o"] = 79;
+    alpha_dict["p"] = 80;
+    alpha_dict["q"] = 81;
+    alpha_dict["r"] = 82;
+    alpha_dict["s"] = 83;
+    alpha_dict["t"] = 84;
+    alpha_dict["u"] = 85;
+    alpha_dict["v"] = 86;
+    alpha_dict["w"] = 87;
+    alpha_dict["x"] = 88;
+    alpha_dict["y"] = 89;
+    alpha_dict["z"] = 90;
+
+    dict(int, string) result_dict = new dict();
+    
+    int result = 0;
+    for(int i = 0; i < length(str); i = i + 1) {
+        result = result + alpha_dict[get(i, str)];
+    }
+
+    result_dict[result] = str;
+
+    return result_dict;
+
+}
+
